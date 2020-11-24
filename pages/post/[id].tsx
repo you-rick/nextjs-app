@@ -14,7 +14,7 @@ const Post:NextPage<PostData> = ({post: serverData}: PostData) => {
 
     useEffect(() => {
         const load = async () => {
-            const response = await fetch(`http://localhost:4200/posts/${router.query.id}`);
+            const response = await fetch(`${process.env.API_URL}/posts/${router.query.id}`);
             const data = await response.json();
             setPost(data);
         };
@@ -44,7 +44,7 @@ Post.getInitialProps = async ({query, req}: PostNextPageContent) => {
             post: null
         }
     }
-    const response = await fetch(`http://localhost:4200/posts/${query.id}`);
+    const response = await fetch(`${process.env.API_URL}/posts/${query.id}`);
     const post: PostInterface = await response.json();
 
     return {

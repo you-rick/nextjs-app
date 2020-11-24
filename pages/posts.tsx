@@ -10,7 +10,7 @@ interface PostsProps {
 
 const Posts = ({posts: serverPosts}: PostsProps) => {
 
-    const serverURL = 'http://localhost:4200/posts'
+    const serverURL = `${process.env.API_URL}/posts`;
     const [posts, setPosts] = useState(serverPosts);
 
     useEffect(() => {
@@ -58,7 +58,7 @@ Posts.getInitialProps = async ({req}: NextPageContext) => {
         }
     }
 
-    const serverURL = 'http://localhost:4200/posts';
+    const serverURL = `${process.env.API_URL}/posts`;
     // fetch внизу - это другой fetch, не клиентский, поставляется с next.js
     const response = await fetch(serverURL);
     const postsList: PostInterface[] = await response.json();
