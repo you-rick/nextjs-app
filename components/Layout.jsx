@@ -5,6 +5,7 @@ const Layout = ({ children, title = 'Next App' }) => {
 	return (
 		<>
 			<Head>
+				<title>{title} | NextjsApp</title>
 				<meta name="keywords" content="Key words, for page, goes here!"/>
 				<meta name="description" content="This is first Nextjs application"/>
 			</Head>
