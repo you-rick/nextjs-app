@@ -1,4 +1,7 @@
 {
+  "about": {
+    "title": "About us page"
+  },
   "posts": [
     {
       "id": 1,
